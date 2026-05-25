@@ -1,0 +1,271 @@
+:root {
+  --bg: #0f172a;
+  --surface: #111827;
+  --surface-alt: #1e293b;
+  --text: #e2e8f0;
+  --text-muted: #94a3b8;
+  --primary: #38bdf8;
+  --primary-dark: #0ea5e9;
+  --accent: #7c3aed;
+  --border: rgba(148, 163, 184, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, rgba(56, 189, 248, 0.16), transparent 30%),
+    linear-gradient(180deg, #020617 0%, #0f172a 100%);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3rem;
+  align-items: center;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 5rem 2rem 3rem;
+}
+
+.hero__content {
+  max-width: 620px;
+}
+
+.eyebrow {
+  margin: 0 0 1rem;
+  color: var(--primary);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: clamp(2.8rem, 4vw, 4.5rem);
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+.hero__text,
+.feature-card p,
+.note-card p,
+.footer p,
+.status-panel p {
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+
+.primary-btn,
+.secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.95rem 1.75rem;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+}
+
+.primary-btn {
+  color: #0f172a;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  box-shadow: 0 18px 40px rgba(56, 189, 248, 0.18);
+}
+
+.secondary-btn {
+  color: var(--text);
+  background: rgba(148, 163, 184, 0.12);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.primary-btn:hover,
+.secondary-btn:hover {
+  transform: translateY(-1px);
+}
+
+.hero__visual {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-card {
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid var(--border);
+  border-radius: 32px;
+  padding: 2rem;
+  max-width: 420px;
+  box-shadow: 0 40px 80px rgba(15, 23, 42, 0.3);
+}
+
+.hero-card strong {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.section {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+}
+
+.section--intro {
+  padding-top: 2rem;
+}
+
+.section__header {
+  margin-bottom: 2rem;
+}
+
+.card,
+.upload-card,
+.note-card {
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  padding: 2rem;
+  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.15);
+}
+
+.upload-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.upload-label {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1.4rem 1.2rem;
+  border: 1px dashed rgba(148, 163, 184, 0.4);
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.upload-title {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.upload-hint {
+  color: var(--text-muted);
+}
+
+#file-upload {
+  display: none;
+}
+
+.alert-grid {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.alert {
+  padding: 1rem 1.2rem;
+  border-radius: 18px;
+  border: 1px solid transparent;
+}
+
+.alert--error {
+  background: rgba(248, 113, 113, 0.12);
+  color: #fecaca;
+  border-color: rgba(248, 113, 113, 0.3);
+}
+
+.alert--message,
+.alert--success {
+  background: rgba(52, 211, 153, 0.12);
+  color: #b4f9cc;
+  border-color: rgba(52, 211, 153, 0.3);
+}
+
+.status-panel {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 22px;
+  background: rgba(30, 41, 59, 0.95);
+  border: 1px solid rgba(148, 163, 184, 0.16);
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.feature-card {
+  border-radius: 24px;
+  padding: 1.75rem;
+  background: rgba(15, 23, 42, 0.88);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+}
+
+.feature-card h3 {
+  margin-bottom: 0.75rem;
+}
+
+.note-card ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--text-muted);
+}
+
+.note-card li {
+  margin-bottom: 0.75rem;
+}
+
+.footer {
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero__visual {
+    justify-content: center;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 3rem 1.5rem 2rem;
+  }
+
+  .section {
+    padding: 1.5rem 1.5rem;
+  }
+}

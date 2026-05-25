@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Cleaner</title>
+    <link rel="stylesheet" href="/static/css/styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__content">
+        <p class="eyebrow">Data Cleaner</p>
+        <h1>Professional Data Cleaning for Your Business Intelligence</h1>
+        <p class="hero__text">
+          Upload your dataset and let the backend cleanse, standardize, and export a production-ready CSV.
+        </p>
+        <a class="primary-btn" href="#upload-section">Start Cleaning</a>
+      </div>
+      <div class="hero__visual">
+        <div class="hero-card">
+          <strong>Clean Data Output</strong>
+          <p>Validated rows, deduplicated orders, standardized dates, and currency precision.</p>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section section--intro" id="upload-section">
+        <div class="section__header">
+          <p class="eyebrow">Upload & Process</p>
+          <h2>Fast, safe, and production-ready data cleaning</h2>
+        </div>
+
+        <div class="card upload-card">
+          <form action="/upload" method="post" enctype="multipart/form-data" class="upload-form">
+            <label for="file-upload" class="upload-label">
+              <span class="upload-title">Select your dataset</span>
+              <span class="upload-hint">CSV, XLSX, or XLS</span>
+            </label>
+            <input id="file-upload" name="file" type="file" accept=".csv,.xlsx,.xls" />
+            <button type="submit" class="primary-btn">Upload & Clean</button>
+          </form>
+
+          {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+          <div class="alert-grid">
+            {% for category, message in messages %}
+            <div class="alert alert--{{ category }}">{{ message }}</div>
+            {% endfor %}
+          </div>
+          {% endif %}
+          {% endwith %}
+
+          {% if success %}
+          <div class="status-panel">
+            <h3>Success!</h3>
+            <p>Your cleaned file is ready.</p>
+            <a class="secondary-btn" href="{{ download_url }}">Download {{ output_file }}</a>
+          </div>
+          {% endif %}
+        </div>
+      </section>
+
+      <section class="section section--features">
+        <div class="section__header">
+          <p class="eyebrow">Why this workflow</p>
+          <h2>Designed for accuracy, speed, and business-ready data</h2>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3>Clean & Standardize</h3>
+            <p>Missing values are imputed, text formatting is normalized, and timestamps are converted to ISO 8601.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Smart Deduplication</h3>
+            <p>Duplicate orders are identified using ID columns and removed while preserving first valid records.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Professional Output</h3>
+            <p>Results are exported as a polished CSV file ready for analytics or reporting.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section--notes">
+        <div class="card note-card">
+          <h2>Instructions</h2>
+          <ul>
+            <li>Upload your dataset using the button above.</li>
+            <li>The backend will process the file and provide a download link.</li>
+            <li>Supported formats: <strong>CSV</strong>, <strong>XLSX</strong>, <strong>XLS</strong>.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Data cleaning powered by Python and a polished HTML/CSS interface.</p>
+    </footer>
+
+    <script src="/static/js/main.js"></script>
+  </body>
+</html>

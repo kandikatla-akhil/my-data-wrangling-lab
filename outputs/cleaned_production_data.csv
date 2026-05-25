@@ -1,0 +1,11 @@
+OrderID,Date,CustomerID,Product,Quantity,UnitPrice,City,OrderStatus
+Ord200001,2024-08-23,C75739,Phone,2.0,151.35,Bengaluru,Shipped
+Ord200002,2023-12-29,C81728,Tablet,5.0,550.68,Mumbai,Cancelled
+Ord200003,2023-12-29,C33540,Chair,2.0,273.19,Bengaluru,Returned
+Ord200004,2025-05-08,C81840,Printer,4.0,626.01,Bengaluru,Delivered
+Ord200005,2023-12-29,C37249,Phone,2.0,245.86,Mumbai,Shipped
+Ord200006,2023-12-29,C83492,Laptop,1.0,259.52,Bengaluru,Returned
+Ord200007,2023-12-29,C41460,Monitor,5.0,149.55,Bengaluru,Shipped
+Ord200008,2025-04-02,C26817,Phone,2.0,134.28,Mumbai,Cancelled
+Ord200009,2023-12-29,C31946,Desk,2.0,509.38,Bengaluru,Shipped
+Ord200010,2023-12-29,C43443,Tablet,5.0,259.52,Delhi,Shipped
